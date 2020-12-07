@@ -4,23 +4,36 @@ body, html{
 
 body{
   margin: 0px;
-  font-size: 18px;
+  font-size: .8rem;
   font-family: georgia, cursive;
 
 }
 
-body, a:link, a:visited, a:active{
+a:link, a:visited, a:active{
   color: white;
+  padding: .6em;
+  margin: .1em;
+  background-color: blue;
+  border-radius: .3em;
+  box-shadow: .2em .2em rgba(95, 158, 160, 0.281);
 
 }
-.title, .addAnimalButton{
-  padding:30px 12px;
+a:hover{
+  background-color: rgb(0, 119, 255);
+}
+
+body{
+  color: white;
+}
+.topbar>*{
   float:right;
   text-decoration-style:none;
+  margin: .5em;
 }
 .topbar{
-  height:90px;
+  height:10vh;
   background-color: rgba(0, 0,0, 0.8);
+  padding: .3em;
 }
 .title{
   background-color: rgba(0,0,0,0.8);
@@ -31,5 +44,32 @@ body, a:link, a:visited, a:active{
   width:80px;
   height: 80px;
   position:absolute;
+  font-size: .5em;
 }
 
+.animal > span{
+display: inline-block;
+width: 100%;
+}
+
+.animal::before {
+  content: attr(data-before);
+  color: red;
+}
+
+#content{
+  height: 90vh;
+  position: relative;
+}
+
+img{
+  width: 60%;
+}
+
+.attribution{
+  color: black;
+}
+
+input{
+  width: 4em;
+}

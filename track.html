@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Race</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    
+  </head>
+  <body>
+    <div class="topbar">
+      <p>
+      <a href="#" id="clearAnimals" >Clear Animals</a>
+      <a href="#" class="addAnimalButton" >Add Animal</a>
+      <a href="#" id="defaultList" >Add Default Animal List</a>
+      <a href='#' class="title">The Race</a>
+      </p>
+      <form> 
+        
+      <span>Time Per Step (secs): <input type="number" step="0.01" min="0.01"id="aniTimeBetweenStep"> </span>
+      <span>Height: <input type="number" id="aniHeight"></span>
+      <span>Width: <input type="number" id="aniWidth"></span>
+      <span>Color: <input type="color" id="aniColor"></span>
+
+      <select id="animalType" name="">
+        <!-- <option value="Cheetah">Cheetah</option>
+        <option value="Lion">Lion</option>
+        <option value="Gazelle">Gazelle</option>
+        <option value="Kangaroo">Kangaroo</option>
+        <option value="Fox">Fox</option>
+        <option value="Dilong">Dilong</option>
+        <option value="Albertosaurus">Albertosaurus</option> -->
+      </select>
+    </form>
+      
+    </div>
+    
+    <div id="content"></div>
+    <p class="attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+    <script src="lib/jquery.js"></script>
+    <script src="src/animal.js"></script>
+    <script src="src/cheetah.js"></script>
+    <script src="src/lion.js"></script>
+    <script src="src/gazelle.js"></script>
+    <script src="src/albertosaurus.js"></script>
+    <script src="src/dilong.js"></script>
+    <script src="src/fox.js"></script>
+    <script src="src/kangaroo.js"></script>
+    <script src="src/init.js"></script>
+  </body>
+</html>
