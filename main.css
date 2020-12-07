@@ -1,0 +1,35 @@
+body, html{
+  height:100%;
+}
+
+body{
+  margin: 0px;
+  font-size: 18px;
+  font-family: georgia, cursive;
+
+}
+
+body, a:link, a:visited, a:active{
+  color: white;
+
+}
+.title, .addAnimalButton{
+  padding:30px 12px;
+  float:right;
+  text-decoration-style:none;
+}
+.topbar{
+  height:90px;
+  background-color: rgba(0, 0,0, 0.8);
+}
+.title{
+  background-color: rgba(0,0,0,0.8);
+  text-decoration: none;
+}
+.animal{
+  background-color:red;
+  width:80px;
+  height: 80px;
+  position:absolute;
+}
+
