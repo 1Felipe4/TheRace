@@ -4,38 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Race</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     
   </head>
   <body>
     <div class="topbar">
       <p>
-      <a href="#" id="clearAnimals" >Clear Animals</a>
-      <a href="#" class="addAnimalButton" >Add Animal</a>
-      <a href="#" id="defaultList" >Add Default Animal List</a>
-      <a href='#' class="title">The Race</a>
-      </p>
-      <form> 
-        
-      <span>Time Per Step (secs): <input type="number" step="0.01" min="0.01"id="aniTimeBetweenStep"> </span>
-      <span>Height: <input type="number" id="aniHeight"></span>
-      <span>Width: <input type="number" id="aniWidth"></span>
-      <span>Color: <input type="color" id="aniColor"></span>
-
-      <select id="animalType" name="">
-        <!-- <option value="Cheetah">Cheetah</option>
-        <option value="Lion">Lion</option>
-        <option value="Gazelle">Gazelle</option>
-        <option value="Kangaroo">Kangaroo</option>
-        <option value="Fox">Fox</option>
-        <option value="Dilong">Dilong</option>
-        <option value="Albertosaurus">Albertosaurus</option> -->
-      </select>
-    </form>
+      <a href="#leaderboards" id="" class="btn btn__menu">Leaderboards</a>
+      <a href="#" id="clearAnimals" class="btn btn__menu">Clear Animals</a>
+      <a href="#" class="btn btn__menu"  onclick="show('animalForm')">Add Animal</a>
+      <a href="#" id="defaultList" class="btn btn__menu">Add Default Animal List</a>
+      <a href='#' class="title btn btn__start">The Race</a>
+      </p>      
       
+
     </div>
+
+    <div class="popup" id="animalForm">
+      <div id="advancedDiv">
+        <form action="" class="form">
+      <label class="lbl">Time Per Step (secs): </label><input type="number" step="0.01" min="0.01"id="aniTimeBetweenStep">
+      <label class="lbl">Height: </label> <input type="number" id="aniHeight"></span>
+      <label class="lbl">Width: </label><input type="number" id="aniWidth">
+    </form>
+    </div>
+
+      <a class = "btn btn__exit" onclick="hide('animalForm')"> 	&#10060;</a>
+      <form action="" class="form">
+        <label>Advanced Options</label>
+      <label class="switch">
+        <input type="checkbox" id="advancedSwitch" onclick="toggleAdvanced()">
+        <span class="slider round"></span>
+      </label>
+      <label class="lbl">Color: </label><input type="color" id="aniColor">
+
+      
+      
+      
+      <select id="animalType" name="">
+
+      </select>
+      <input type="submit" class="addAnimalButton btn btn__menu" value="Add Animal" />
+      </form>
+
+
+    </div>
+
+
     
-    <div id="content"></div>
+    <div id="content" class="content"></div>
+
+    <div class="leaderboards__div">
+      <h3>Leaderboards</h3>
+      <div id="leaderboards" ></div>
+    </div>
     <p class="attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
     <script src="lib/jquery.js"></script>
     <script src="src/animal.js"></script>
@@ -46,6 +68,7 @@
     <script src="src/dilong.js"></script>
     <script src="src/fox.js"></script>
     <script src="src/kangaroo.js"></script>
+    <script src="src/race.js"></script>
     <script src="src/init.js"></script>
   </body>
 </html>

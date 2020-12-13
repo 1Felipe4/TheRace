@@ -1,0 +1,29 @@
+{
+  "name": "animal-morphe",
+  "version": "1.0.0",
+  "description": "Animal Racing",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass":"node-sass sass/main.scss css/style.css" 
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnagee/hrr32-subclass-dance-party.git"
+  },
+  "author": "RSanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnagee/hrr32-subclass-dance-party/issues"
+  },
+  "homepage": "https://github.com/adnagee/hrr32-subclass-dance-party#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0",
+    "sass": "^1.30.0"
+  }
+
+}
