@@ -1,6 +1,6 @@
 
 
-var Fox = function(top, left, maxTop, maxLeft, timeBetweenSteps=.5, height=20, width = 40, color="#F57C02"){
+var Fox = function(top, left, maxTop, maxLeft, timeBetweenSteps=.5, height=30, width = 40, color="#F57C02"){
   if(top){
   Fox.count++;
   }

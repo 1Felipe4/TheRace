@@ -5,6 +5,8 @@ Add that object to the window content area.
  */
 var objects = ["Albertosaurus","Cheetah","Dilong", "Fox", "Gazelle", "Kangaroo", "Lion"]
 
+
+
 var updateFields = function (){
   let tempAnimal = new window[$('#animalType').val()]();
 console.log(tempAnimal)
@@ -15,11 +17,31 @@ $("#aniColor").val(tempAnimal.color)
 
 }
 
+function show(id){
+  $("#"+id).show();
+}
 
+function hide(id){
+  $("#"+id).hide();
+}
 
-
+var toggleAdvanced;
 $(document).ready(function() {
   window.animals = [];
+  window.races = [];
+
+  toggleAdvanced = function(){
+    let val = $("#advancedSwitch").prop("checked");
+    let div =  $("advancedDiv");
+    if(val){
+    show("advancedDiv")
+    console.log(val)
+    }else{
+      hide("advancedDiv");
+    }
+  
+  }
+
 
   var clearAnimals = function(){
     window.animals = [];
@@ -72,7 +94,6 @@ $(document).ready(function() {
     if(pos < $("#content").height()){
     
       window.animals.push(animal);
-      console.log(animal.$node)
     $('#content').append(animal.$node);
     }
 
@@ -83,17 +104,35 @@ $(document).ready(function() {
   var start = false;
 
   $('.title').on('click', function(event) {
+      
       var animalsFinished = 0;
       var animalsTotal = window.animals.length;
       var finished = function (){
+        var currRace = window.races[0];
         animalsFinished++;
-        console.log(this)
-        if(animalsFinished == 1){
-          alert(this.name + " Came First");
+        currRace.places.push(this);
+        if(animalsFinished == currRace.animals.length){
+         currRace.finished = true;
+        }
+
+        if(currRace.finished){
+          currRace.genLeaderboard();
+          $("#leaderboards").prepend(currRace.$node());
         }
       }
       start = !start;
-      window.animals.forEach(animal => {
+      if(start){
+        if(!window.races){
+          window.races.push(new race("Race #" + (race.count+1), window.animals));
+        }else{
+          window.races.unshift(new race("Race #" + (race.count+1), window.animals))
+        }
+        
+      }
+
+
+      console.log(window.races);
+      window.races[0].animals.forEach(animal => {
         animal.getReady(start);
         animal.finished = finished;
       });
@@ -133,6 +172,10 @@ $(document).ready(function() {
     });
   });
   
+  
+
+  toggleAdvanced()
+
 });
 
 
